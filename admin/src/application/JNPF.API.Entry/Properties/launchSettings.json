@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "JNPF.API.Entry": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://127.0.0.1:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    }
+  }
+}
+//192.168.3.55   127.0.0.1

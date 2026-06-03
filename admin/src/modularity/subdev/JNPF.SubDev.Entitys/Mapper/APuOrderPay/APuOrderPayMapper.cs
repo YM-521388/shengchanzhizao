@@ -1,0 +1,32 @@
+﻿using JNPF.Common.Security;
+using JNPF.Common.Models;
+using JNPF.example.Entitys.Dto.APuOrderPay;
+using Mapster;
+ 
+namespace JNPF.example.Entitys.Mapper.APuOrderPay;
+
+public class Mapper : IRegister
+{
+	public void Register(TypeAdapterConfig config)
+	{
+		config.ForType<APuOrderPayCrInput, APuOrderPayEntity>()
+			.Map(dest => dest.F_OrderId, src => src.F_OrderId != null ? src.F_OrderId : null)
+			.Map(dest => dest.F_SupplierId, src => src.F_SupplierId != null ? src.F_SupplierId : null)
+			.Map(dest => dest.F_Money, src => src.F_Money != null ? src.F_Money : null)
+			.Map(dest => dest.F_PayDate, src => src.F_PayDate != null ? src.F_PayDate : null)
+			.Map(dest => dest.F_Files, src => src.F_Files != null && src.F_Files.Count > 0 ? src.F_Files.ToJsonString().Replace("\r\n", "").Replace(" ", "") : null)
+			.Map(dest => dest.F_Description, src => src.F_Description != null ? src.F_Description : null)
+			.Map(dest => dest.F_CreatorUserId, src => src.F_CreatorUserId != null ? src.F_CreatorUserId : null)
+		;
+		config.ForType<APuOrderPayEntity, APuOrderPayInfoOutput>()
+			.Map(dest => dest.F_OrderId, src => src.F_OrderId != null ? src.F_OrderId : null)
+			.Map(dest => dest.F_SupplierId, src => src.F_SupplierId != null ? src.F_SupplierId : null)
+			.Map(dest => dest.F_Money, src => src.F_Money != null ? src.F_Money : null)
+			.Map(dest => dest.F_PayDate, src => src.F_PayDate != null ? src.F_PayDate : null)
+			.Map(dest => dest.F_Files, src => src.F_Files != null ? src.F_Files.ToObject<List<FileControlsModel>>() : new List<FileControlsModel>())
+			.Map(dest => dest.F_Description, src => src.F_Description != null ? src.F_Description : null)
+			.Map(dest => dest.F_CreatorUserId, src => src.F_CreatorUserId != null ? src.F_CreatorUserId : null)
+			.Map(dest => dest.F_CreatorTime, src => string.Format("{0:yyyy-MM-dd HH:mm:ss}", src.F_CreatorTime))
+		;
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "ConnectionStrings": {
+    "ConnectionConfigs": [
+      {
+        "ConfigId": "default",
+        "DBName": "yikeerp_init",
+        "DBType": "MySql", //MySql;SqlServer;Oracle;PostgreSQL;Dm;Kdbndp;Sqlite;
+        "Host": "192.168.3.88",
+        "Port": "33302",
+        "UserName": "yike",
+        "Password": "pqB6@nX8@123456",
+        "DBSchema": "public"
+      },
+      {
+        "ConfigId": "JNPF-Job", // 不可修改
+        "DBName": "yikeerp_sundial",
+        "DBType": "MySql", //MySql;SqlServer;Oracle;PostgreSQL;Dm;Kdbndp;Sqlite;
+        "Host": "192.168.3.88",
+        "Port": "33302",
+        "UserName": "yike",
+        "Password": "pqB6@nX8@123456",
+        "DBSchema": "public"
+      }
+    ]
+  }
+}
