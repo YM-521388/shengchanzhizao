@@ -1,0 +1,9 @@
+unpackage/dist
+unpackage/debug
+unpackage/cache
+unpackage/release
+.hbuilderx/launch.json
+pages/login/index1.vue
+.vite/deps
+node_modules/.vite
+harmony-configs/entry

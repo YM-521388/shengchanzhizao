@@ -1,0 +1,376 @@
+﻿const columnList = [
+  {
+    "label": "成品入库单号",
+    "labelI18nCode": "",
+    "prop": "F_StockInNo",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "input",
+    "sortable": false,
+    "width": null,
+    "id": "F_StockInNo",
+    "fullName": "成品入库单号",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "成品入库单号",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 8,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_stock_fg",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formIteme5c1b2",
+      "renderKey": 1768789053261,
+      "unique": false
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请填写，忽略将自动生成",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_StockInNo"
+  },
+  {
+    "label": "入库日期",
+    "labelI18nCode": "",
+    "prop": "F_StockInDate",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "datePicker",
+    "sortable": false,
+    "width": null,
+    "id": "F_StockInDate",
+    "fullName": "入库日期",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "datePicker",
+      "label": "入库日期",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfDatePicker",
+      "tagIcon": "icon-ym icon-ym-generator-date",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": null,
+      "defaultCurrent": false,
+      "required": true,
+      "layout": "colFormItem",
+      "span": 8,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_stock_fg",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "startTimeRule": false,
+      "startTimeType": 1,
+      "startTimeTarget": 1,
+      "startTimeValue": null,
+      "startRelationField": "",
+      "endTimeRule": false,
+      "endTimeType": 1,
+      "endTimeTarget": 1,
+      "endTimeValue": null,
+      "endRelationField": "",
+      "formId": "formItem2fcb0f",
+      "renderKey": 1768789131156
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "format": "yyyy-MM-dd",
+    "startTime": null,
+    "endTime": null,
+    "disabled": false,
+    "clearable": true,
+    "__vModel__": "F_StockInDate"
+  },
+  {
+    "label": "工单类型",
+    "labelI18nCode": "",
+    "prop": "F_Type",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "select",
+    "sortable": false,
+    "width": null,
+    "id": "F_Type",
+    "fullName": "工单类型",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "select",
+      "label": "工单类型",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfSelect",
+      "tagIcon": "icon-ym icon-ym-generator-select",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "0",
+      "required": true,
+      "layout": "colFormItem",
+      "span": 8,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_stock_fg",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "dataType": "dictionary",
+      "dictionaryType": "2014894783159472128",
+      "propsUrl": "",
+      "propsName": "",
+      "useCache": true,
+      "templateJson": [],
+      "formId": "formItemdf796b",
+      "renderKey": 1768789639781
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "options": [],
+    "props": {
+      "label": "fullName",
+      "value": "enCode"
+    },
+    "placeholder": "请选择",
+    "clearable": false,
+    "disabled": false,
+    "filterable": false,
+    "multiple": false,
+    "__vModel__": "F_Type"
+  },
+  {
+    "label": "入库类型",
+    "labelI18nCode": "",
+    "prop": "F_StockInType",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "select",
+    "sortable": false,
+    "width": null,
+    "id": "F_StockInType",
+    "fullName": "入库类型",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "select",
+      "label": "入库类型",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfSelect",
+      "tagIcon": "icon-ym icon-ym-generator-select",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "required": false,
+      "layout": "colFormItem",
+      "span": 8,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_stock_fg",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "dataType": "dictionary",
+      "dictionaryType": "2012074650393251840",
+      "propsUrl": "",
+      "propsName": "",
+      "useCache": true,
+      "templateJson": [],
+      "formId": "formItem7e22d9",
+      "renderKey": 1768789291488
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "options": [],
+    "props": {
+      "label": "fullName",
+      "value": "enCode"
+    },
+    "placeholder": "请选择",
+    "clearable": true,
+    "disabled": false,
+    "filterable": false,
+    "multiple": false,
+    "__vModel__": "F_StockInType"
+  },
+  {
+    "label": "备注",
+    "labelI18nCode": "",
+    "prop": "F_Description",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "textarea",
+    "sortable": false,
+    "width": null,
+    "id": "F_Description",
+    "fullName": "备注",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "textarea",
+      "label": "备注",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfTextarea",
+      "tagIcon": "icon-ym icon-ym-generator-textarea",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_stock_fg",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItembdcb85",
+      "renderKey": 1768789322109
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "autoSize": {
+      "minRows": 2,
+      "maxRows": 4
+    },
+    "clearable": true,
+    "maxlength": null,
+    "showCount": true,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_Description"
+  },
+  {
+    "label": "创建时间",
+    "labelI18nCode": "",
+    "prop": "F_CreatorTime",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "createTime",
+    "sortable": false,
+    "width": null,
+    "id": "F_CreatorTime",
+    "fullName": "创建时间",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createTime",
+      "label": "创建时间",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-createtime",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "layout": "colFormItem",
+      "required": false,
+      "span": 12,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_stock_fg",
+      "noShow": true,
+      "formId": "formIteme329b9",
+      "renderKey": 1768789349986
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currTime",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorTime"
+  }
+]
+
+export default columnList
