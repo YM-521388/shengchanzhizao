@@ -1,0 +1,295 @@
+﻿const columnList = [
+  {
+    "label": "商品2",
+    "labelI18nCode": "",
+    "prop": "F_GoodsId",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "select",
+    "sortable": false,
+    "width": null,
+    "id": "F_GoodsId",
+    "fullName": "商品",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "select",
+      "label": "商品",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfSelect",
+      "tagIcon": "icon-ym icon-ym-generator-select",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_goods_inventory",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "dataType": "dynamic",
+      "dictionaryType": "",
+      "propsUrl": "2012085692393459712",
+      "propsName": "弹窗获取商品列表（可传合同ID）",
+      "useCache": true,
+      "templateJson": [
+        {
+          "id": "b6217b",
+          "field": "contractId",
+          "dataType": "varchar",
+          "defaultValue": "",
+          "required": 0,
+          "fieldName": "合同ID",
+          "relationField": "",
+          "sourceType": 3
+        }
+      ],
+      "formId": "formItem8ae28a",
+      "renderKey": 1769152534785
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "options": [],
+    "props": {
+      "label": "F_GoodsName",
+      "value": "id"
+    },
+    "placeholder": "请选择",
+    "clearable": true,
+    "disabled": false,
+    "filterable": true,
+    "multiple": false,
+    "__vModel__": "F_GoodsId"
+  },
+  {
+    "label": "仓库",
+    "labelI18nCode": "",
+    "prop": "F_WarehouseId",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "cascader",
+    "sortable": false,
+    "width": null,
+    "id": "F_WarehouseId",
+    "fullName": "仓库",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "cascader",
+      "label": "仓库",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfCascader",
+      "tagIcon": "icon-ym icon-ym-generator-cascader",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_goods_inventory",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "dataType": "dynamic",
+      "propsUrl": "2021045201115680768",
+      "propsName": "仓库管理（树状）",
+      "useCache": true,
+      "templateJson": [],
+      "dictionaryType": "",
+      "formId": "formItemdd74d3",
+      "renderKey": 1772420282348
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "options": [],
+    "props": {
+      "value": "F_Id",
+      "label": "F_Name",
+      "children": "children"
+    },
+    "placeholder": "请选择",
+    "disabled": false,
+    "clearable": true,
+    "filterable": false,
+    "multiple": false,
+    "__vModel__": "F_WarehouseId"
+  },
+  {
+    "label": "库存数量",
+    "labelI18nCode": "",
+    "prop": "F_Num",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "inputNumber",
+    "sortable": false,
+    "width": null,
+    "id": "F_Num",
+    "fullName": "库存数量",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "inputNumber",
+      "label": "库存数量",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInputNumber",
+      "tagIcon": "icon-ym icon-ym-generator-number",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_goods_inventory",
+      "noShow": false,
+      "regList": [],
+      "trigger": [
+        "blur",
+        "change"
+      ],
+      "formId": "formItem7a3fa2",
+      "renderKey": 1769152715133
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "min": 0,
+    "controls": false,
+    "addonBefore": "",
+    "addonAfter": "",
+    "thousands": false,
+    "isAmountChinese": false,
+    "step": 1,
+    "precision": 0,
+    "disabled": false,
+    "__vModel__": "F_Num"
+  },
+  {
+    "label": "创建人员",
+    "labelI18nCode": "",
+    "prop": "F_CreatorUserId",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "createUser",
+    "sortable": false,
+    "width": null,
+    "id": "F_CreatorUserId",
+    "fullName": "创建人员",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createUser",
+      "label": "创建人员",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-founder",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_goods_inventory",
+      "noShow": true,
+      "formId": "formItem2d142e",
+      "renderKey": 1769152539142
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currUser",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorUserId"
+  },
+  {
+    "label": "创建时间",
+    "labelI18nCode": "",
+    "prop": "F_CreatorTime",
+    "fixed": "none",
+    "align": "left",
+    "jnpfKey": "createTime",
+    "sortable": false,
+    "width": null,
+    "id": "F_CreatorTime",
+    "fullName": "创建时间",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createTime",
+      "label": "创建时间",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-createtime",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "layout": "colFormItem",
+      "required": false,
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_goods_inventory",
+      "noShow": true,
+      "formId": "formItem5f198b",
+      "renderKey": 1769152539421
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currTime",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorTime"
+  }
+]
+export default columnList

@@ -1,0 +1,194 @@
+﻿const searchList = [
+  {
+    "label": "编号",
+    "labelI18nCode": "",
+    "prop": "F_DefectCode",
+    "jnpfKey": "input",
+    "searchType": 2,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_DefectCode",
+    "fullName": "不良品项编号",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "不良品项编号",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_prod_defect",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItem4954ff",
+      "renderKey": 1768447065834
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请填写，忽略将自动生产",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_DefectCode"
+  },
+  {
+    "label": "名称",
+    "labelI18nCode": "",
+    "prop": "F_DefectName",
+    "jnpfKey": "input",
+    "searchType": 2,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_DefectName",
+    "fullName": "不良品项名称",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "不良品项名称",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_prod_defect",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItemde00af",
+      "renderKey": 1768447066142,
+      "unique": true
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_DefectName"
+  },
+  {
+    "label": "创建时间",
+    "labelI18nCode": "",
+    "prop": "F_CreatorTime",
+    "jnpfKey": "createTime",
+    "searchType": 3,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_CreatorTime",
+    "fullName": "创建时间",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createTime",
+      "label": "创建时间",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-createtime",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "layout": "colFormItem",
+      "required": false,
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_prod_defect",
+      "noShow": true,
+      "formId": "formItem316328",
+      "renderKey": 1768447087981
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currTime",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorTime"
+  }
+]
+export default searchList

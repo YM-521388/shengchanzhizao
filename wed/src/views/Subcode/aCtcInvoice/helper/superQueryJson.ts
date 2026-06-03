@@ -1,0 +1,843 @@
+﻿const superQueryJson = [
+  {
+    "id": "F_ContractId",
+    "fullName": "合同ID",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "popupSelect",
+      "label": "合同ID",
+      "tipLabel": "",
+      "showLabel": true,
+      "required": false,
+      "tag": "JnpfPopupSelect",
+      "tagIcon": "icon-ym icon-ym-generator-popup",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "transferList": [],
+      "useCache": true,
+      "formId": "formItemfc9da2",
+      "renderKey": 1768268605342
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "interfaceId": "2010889611072638976",
+    "interfaceName": "合同",
+    "templateJson": [],
+    "hasPage": false,
+    "pageSize": 20,
+    "extraOptions": [],
+    "columnOptions": [
+      {
+        "value": "F_ContractCode",
+        "label": "编号"
+      },
+      {
+        "value": "F_PrepayAmount",
+        "label": "预付款"
+      },
+      {
+        "value": "F_SaleTotal",
+        "label": "销售总数"
+      },
+      {
+        "value": "F_ContractAmount",
+        "label": "合同金额"
+      },
+      {
+        "value": "F_IsTaxable",
+        "label": "是否含税"
+      },
+      {
+        "value": "F_AuditStatus",
+        "label": "审核状态"
+      },
+      {
+        "value": "F_Description",
+        "label": "备注"
+      },
+      {
+        "value": "F_CreatorTime",
+        "label": "参加时间"
+      }
+    ],
+    "propsValue": "F_Id",
+    "relationField": "F_ContractCode",
+    "popupType": "dialog",
+    "popupTitle": "选择数据",
+    "popupWidth": "1000px",
+    "disabled": false,
+    "clearable": true,
+    "__vModel__": "F_ContractId",
+    "interfaceHasPage": 0
+  },
+  {
+    "id": "F_Money",
+    "fullName": "开票金额(元)",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "inputNumber",
+      "label": "开票金额(元)",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInputNumber",
+      "tagIcon": "icon-ym icon-ym-generator-number",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": [
+        "blur",
+        "change"
+      ],
+      "formId": "formItem5abac6",
+      "renderKey": 1768268809903
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "controls": false,
+    "addonBefore": "",
+    "addonAfter": "",
+    "thousands": false,
+    "isAmountChinese": false,
+    "step": 1,
+    "disabled": false,
+    "__vModel__": "F_Money"
+  },
+  {
+    "id": "F_Status",
+    "fullName": "开票状态",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "开票状态",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItema871e6",
+      "renderKey": 1768268816436
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_Status"
+  },
+  {
+    "id": "F_ApplyFiles",
+    "fullName": "申请附件",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "uploadFile",
+      "label": "申请附件",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfUploadFile",
+      "tagIcon": "icon-ym icon-ym-generator-upload",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "formId": "formItem312308",
+      "renderKey": 1768268826601
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "disabled": false,
+    "accept": "",
+    "fileSize": 10,
+    "sizeUnit": "MB",
+    "buttonText": "点击上传",
+    "limit": 9,
+    "pathType": "defaultPath",
+    "sortRule": [],
+    "timeFormat": "YYYY",
+    "folder": "",
+    "tipText": "",
+    "__vModel__": "F_ApplyFiles"
+  },
+  {
+    "id": "F_ApplyRemark",
+    "fullName": "申请备注",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "textarea",
+      "label": "申请备注",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfTextarea",
+      "tagIcon": "icon-ym icon-ym-generator-textarea",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItemdca8da",
+      "renderKey": 1768268838988
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "autoSize": {
+      "minRows": 2,
+      "maxRows": 4
+    },
+    "clearable": true,
+    "maxlength": null,
+    "showCount": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_ApplyRemark"
+  },
+  {
+    "id": "F_InvoiceFiles",
+    "fullName": "开票附件",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "uploadFile",
+      "label": "开票附件",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfUploadFile",
+      "tagIcon": "icon-ym icon-ym-generator-upload",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "formId": "formItema20d01",
+      "renderKey": 1768268855484
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "disabled": false,
+    "accept": "",
+    "fileSize": 10,
+    "sizeUnit": "MB",
+    "buttonText": "点击上传",
+    "limit": 9,
+    "pathType": "defaultPath",
+    "sortRule": [],
+    "timeFormat": "YYYY",
+    "folder": "",
+    "tipText": "",
+    "__vModel__": "F_InvoiceFiles"
+  },
+  {
+    "id": "F_InvoiceRemark",
+    "fullName": "开票备注",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "textarea",
+      "label": "开票备注",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfTextarea",
+      "tagIcon": "icon-ym icon-ym-generator-textarea",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItem12ffe4",
+      "renderKey": 1768268865035
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "autoSize": {
+      "minRows": 2,
+      "maxRows": 4
+    },
+    "clearable": true,
+    "maxlength": null,
+    "showCount": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_InvoiceRemark"
+  },
+  {
+    "id": "F_ApplyUserId",
+    "fullName": "申请人员",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "userSelect",
+      "label": "申请人员",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfUserSelect",
+      "tagIcon": "icon-ym icon-ym-generator-user",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": null,
+      "defaultCurrent": false,
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "formId": "formItem7ef739",
+      "renderKey": 1768268884100
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "selectType": "all",
+    "ableIds": [],
+    "ableRelationIds": [],
+    "relationField": "",
+    "multiple": false,
+    "clearable": true,
+    "disabled": false,
+    "__vModel__": "F_ApplyUserId"
+  },
+  {
+    "id": "F_ApplyTime",
+    "fullName": "申请时间",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "datePicker",
+      "label": "申请时间",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfDatePicker",
+      "tagIcon": "icon-ym icon-ym-generator-date",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": null,
+      "defaultCurrent": false,
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "startTimeRule": false,
+      "startTimeType": 1,
+      "startTimeTarget": 1,
+      "startTimeValue": null,
+      "startRelationField": "",
+      "endTimeRule": false,
+      "endTimeType": 1,
+      "endTimeTarget": 1,
+      "endTimeValue": null,
+      "endRelationField": "",
+      "formId": "formItem18e37b",
+      "renderKey": 1768268892117
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "format": "yyyy-MM-dd",
+    "startTime": null,
+    "endTime": null,
+    "disabled": false,
+    "clearable": true,
+    "__vModel__": "F_ApplyTime"
+  },
+  {
+    "id": "F_InvoiceUserId",
+    "fullName": "开票人员",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "userSelect",
+      "label": "开票人员",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfUserSelect",
+      "tagIcon": "icon-ym icon-ym-generator-user",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": null,
+      "defaultCurrent": false,
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "formId": "formItem09a586",
+      "renderKey": 1768268899333
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "selectType": "all",
+    "ableIds": [],
+    "ableRelationIds": [],
+    "relationField": "",
+    "multiple": false,
+    "clearable": true,
+    "disabled": false,
+    "__vModel__": "F_InvoiceUserId"
+  },
+  {
+    "id": "F_InvoiceTime",
+    "fullName": "开票时间",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "datePicker",
+      "label": "开票时间",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfDatePicker",
+      "tagIcon": "icon-ym icon-ym-generator-date",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": null,
+      "defaultCurrent": false,
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "startTimeRule": false,
+      "startTimeType": 1,
+      "startTimeTarget": 1,
+      "startTimeValue": null,
+      "startRelationField": "",
+      "endTimeRule": false,
+      "endTimeType": 1,
+      "endTimeTarget": 1,
+      "endTimeValue": null,
+      "endRelationField": "",
+      "formId": "formItem1bc45a",
+      "renderKey": 1768268903799
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "format": "yyyy-MM-dd",
+    "startTime": null,
+    "endTime": null,
+    "disabled": false,
+    "clearable": true,
+    "__vModel__": "F_InvoiceTime"
+  },
+  {
+    "id": "tableField2cca74-F_Title",
+    "fullName": "操作日志-标题",
+    "fullNameI18nCode": [
+      "",
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "标题",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItem8e145c",
+      "renderKey": 1768268969598,
+      "isSubTable": true,
+      "parentVModel": "tableField2cca74",
+      "relationTable": "a_ctc_invoice_log"
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_Title"
+  },
+  {
+    "id": "tableField2cca74-F_Content",
+    "fullName": "操作日志-内容",
+    "fullNameI18nCode": [
+      "",
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "内容",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItembbab07",
+      "renderKey": 1768268972345,
+      "isSubTable": true,
+      "parentVModel": "tableField2cca74",
+      "relationTable": "a_ctc_invoice_log"
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_Content"
+  },
+  {
+    "id": "tableField2cca74-F_CreatorUserId",
+    "fullName": "操作日志-创建人员",
+    "fullNameI18nCode": [
+      "",
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createUser",
+      "label": "创建人员",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-founder",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "isSubTable": true,
+      "parentVModel": "tableField2cca74",
+      "relationTable": "a_ctc_invoice_log",
+      "formId": "formItem0dcb4b",
+      "renderKey": 1768268989071
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currUser",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorUserId"
+  },
+  {
+    "id": "tableField2cca74-F_CreatorTime",
+    "fullName": "操作日志-创建时间",
+    "fullNameI18nCode": [
+      "",
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createTime",
+      "label": "创建时间",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-createtime",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "layout": "colFormItem",
+      "required": false,
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_ctc_invoice",
+      "noShow": false,
+      "isSubTable": true,
+      "parentVModel": "tableField2cca74",
+      "relationTable": "a_ctc_invoice_log",
+      "formId": "formItemf3ef2f",
+      "renderKey": 1768268999247
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currTime",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorTime"
+  }
+]
+export default superQueryJson

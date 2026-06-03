@@ -1,0 +1,293 @@
+﻿<template>
+  <BasicModal
+    v-bind="$attrs"
+    @register="registerModal"
+    width="800px"
+    :minHeight="100"
+    okText="确定"
+    cancelText="取消"
+    @ok="handleSubmit"
+    :closeFunc="onClose"
+    :canFullscreen="true">
+    <template #title>
+      <a-space :size="10">
+        <div class="text-16px font-medium">{{ title }}</div>
+        <a-space-compact size="small" block v-if="dataForm.id">
+          <a-tooltip :title="t('common.prevRecord')">
+            <a-button size="small" :disabled="getPrevDisabled" @click="handlePrev">
+              <i class="icon-ym icon-ym-caret-left text-10px"></i>
+            </a-button>
+          </a-tooltip>
+          <a-tooltip :title="t('common.nextRecord')">
+            <a-button size="small" :disabled="getNextDisabled" @click="handleNext">
+              <i class="icon-ym icon-ym-caret-right text-10px"></i>
+            </a-button>
+          </a-tooltip>
+        </a-space-compact>
+      </a-space>
+    </template>
+    <template #insertToolbar>
+      <div class="float-left mt-5px">
+        <JnpfCheckboxSingle v-model:value="submitType" :label="continueText" />
+      </div>
+    </template>
+    <a-row class="dynamic-form">
+      <a-form :colon="false" layout="horizontal" labelAlign="right" :labelCol="{ style: { width: '100px' } }" :model="dataForm" :rules="dataRule" ref="formRef">
+        <a-row :gutter="15">
+          <!-- <a-col :span="24" class="ant-col-item" v-if="hasFormP('F_CustomerId')" >
+            <a-form-item name="F_CustomerId" :labelCol="{ style: { width: '100px' } }">
+              <template #label>客户ID</template>
+              <JnpfInput v-model:value="dataForm.F_CustomerId" placeholder='请输入' allowClear :style='{
+  "width": "100%"
+}'  :showCount='false'  />
+            </a-form-item>
+          </a-col> -->
+          <a-col :span="24" class="ant-col-item" v-if="hasFormP('F_ContactName')">
+            <a-form-item name="F_ContactName" :labelCol="{ style: { width: '100px' } }">
+              <template #label>联系人</template>
+              <JnpfInput
+                v-model:value="dataForm.F_ContactName"
+                placeholder="请输入"
+                allowClear
+                :style="{
+                  width: '100%',
+                }"
+                :showCount="false" />
+            </a-form-item>
+          </a-col>
+          <a-col :span="24" class="ant-col-item" v-if="hasFormP('F_ContactPhone')">
+            <a-form-item name="F_ContactPhone" :labelCol="{ style: { width: '100px' } }">
+              <template #label>联系人电话</template>
+              <JnpfInput
+                v-model:value="dataForm.F_ContactPhone"
+                placeholder="请输入"
+                allowClear
+                :style="{
+                  width: '100%',
+                }"
+                :showCount="false" />
+            </a-form-item>
+          </a-col>
+          <a-col :span="24" class="ant-col-item" v-if="hasFormP('F_IsDefault')">
+            <a-form-item name="F_IsDefault" :labelCol="{ style: { width: '100px' } }">
+              <template #label>是否默认</template>
+              <JnpfSwitch v-model:value="dataForm.F_IsDefault" />
+            </a-form-item>
+          </a-col>
+          <!-- <a-col :span="24" class="ant-col-item" v-if="hasFormP('F_CreatorTime')" >
+            <a-form-item name="F_CreatorTime" :labelCol="{ style: { width: '100px' } }">
+              <template #label>创建时间</template>
+              <JnpfOpenData v-model:value="dataForm.F_CreatorTime" type="currTime" readonly :style='{
+  "width": "100%"
+}'  />
+            </a-form-item>
+          </a-col> -->
+        </a-row>
+      </a-form>
+    </a-row>
+  </BasicModal>
+  <SelectModal :config="state.currTableConf" :formData="state.dataForm" ref="selectModal" @select="addForSelect" />
+</template>
+<script lang="ts" setup>
+  import { create, update, getInfo } from './helper/api';
+  import { reactive, toRefs, nextTick, ref, unref, computed, toRaw, inject } from 'vue';
+  import { BasicModal, useModal } from '@/components/Modal';
+  import SelectModal from '@/components/CommonModal/src/SelectModal.vue';
+  import { useMessage } from '@/hooks/web/useMessage';
+  import { useI18n } from '@/hooks/web/useI18n';
+  import { useUserStore } from '@/store/modules/user';
+  import type { FormInstance } from 'ant-design-vue';
+  import { thousandsFormat } from '@/utils/jnpf';
+  import { getTimeUnit, getDateTimeUnit } from '@/utils/jnpf';
+  import dayjs from 'dayjs';
+  import { cloneDeep } from 'lodash-es';
+  import { buildUUID } from '@/utils/uuid';
+  import { CaretRightOutlined } from '@ant-design/icons-vue';
+  import { systemComponentsList } from '@/components/FormGenerator/src/helper/config';
+  import { usePermission } from '@/hooks/web/usePermission';
+
+  interface State {
+    dataForm: any;
+    dataRule: any;
+    currVmodel: any;
+    currTableConf: any;
+    addTableConf: any;
+    tableRows: any;
+    title: string;
+    continueText: string;
+    allList: any[];
+    currIndex: number;
+    isContinue: boolean;
+    submitType: number;
+    showContinueBtn: boolean;
+  }
+
+  const emit = defineEmits(['reload']);
+  const getLeftTreeActiveInfo: (() => any) | null = inject('getLeftTreeActiveInfo', null);
+  const userStore = useUserStore();
+  const userInfo = userStore.getUserInfo;
+  const { createMessage, createConfirm } = useMessage();
+  const { t } = useI18n();
+  const { hasFormP } = usePermission();
+  const [registerModal, { openModal, setModalProps }] = useModal();
+  const formRef = ref<FormInstance>();
+  const selectModal = ref(null);
+  const state = reactive<State>({
+    dataForm: {
+      id: '',
+      F_CustomerId: undefined,
+      F_ContactName: undefined,
+      F_ContactPhone: undefined,
+      F_IsDefault: 0,
+      F_CreatorTime: undefined,
+    },
+    dataRule: {
+      F_ContactPhone: [
+        {
+          pattern: /^1[3456789]\d{9}$|^0\d{2,3}-?\d{7,8}$/,
+          message: t('sys.validate.phone', '请输入正确的联系方式'),
+          trigger: 'blur',
+        },
+      ],
+    },
+    currVmodel: '',
+    currTableConf: {},
+    tableRows: {},
+    addTableConf: {},
+    title: '',
+    continueText: '',
+    allList: [],
+    currIndex: 0,
+    isContinue: false,
+    submitType: 0,
+    showContinueBtn: true,
+  });
+  const { title, continueText, showContinueBtn, dataForm, submitType, dataRule } = toRefs(state);
+
+  const getPrevDisabled = computed(() => state.currIndex === 0);
+  const getNextDisabled = computed(() => state.currIndex === state.allList.length - 1);
+
+  defineExpose({ init });
+
+  function init(data) {
+    state.submitType = 0;
+    state.showContinueBtn = true;
+    state.title = !data.id ? '新增' : '编辑';
+    state.continueText = !data.id ? '确定并新增' : '确定并继续';
+    setFormProps({ continueLoading: false });
+    state.dataForm.id = data.id;
+    openModal();
+    state.allList = data.allList;
+    state.currIndex = state.allList.length && data.id ? state.allList.findIndex(item => item.id === data.id) : 0;
+    nextTick(() => {
+      getForm().resetFields();
+      setTimeout(initData, 0);
+    });
+  }
+  function initData() {
+    changeLoading(true);
+    if (state.dataForm.id) {
+      getData(state.dataForm.id);
+    } else {
+      // 设置默认值
+      state.dataForm = {
+        F_CustomerId: undefined,
+        F_ContactName: undefined,
+        F_ContactPhone: undefined,
+        F_IsDefault: 0,
+        F_CreatorTime: undefined,
+      };
+      if (getLeftTreeActiveInfo) state.dataForm = { ...state.dataForm, ...(getLeftTreeActiveInfo() || {}) };
+      changeLoading(false);
+    }
+  }
+  function getForm() {
+    const form = unref(formRef);
+    if (!form) {
+      throw new Error('form is null!');
+    }
+    return form;
+  }
+  function getData(id) {
+    getInfo(id).then(res => {
+      state.dataForm = res.data || {};
+      changeLoading(false);
+    });
+  }
+  async function handleSubmit() {
+    try {
+      const values = await getForm()?.validate();
+      if (!values) return;
+      setFormProps({ confirmLoading: true });
+      const formMethod = state.dataForm.id ? update : create;
+      formMethod(state.dataForm)
+        .then(res => {
+          createMessage.success(res.msg);
+          setFormProps({ confirmLoading: false });
+          if (state.submitType == 1) {
+            initData();
+            state.isContinue = true;
+          } else {
+            setFormProps({ open: false });
+            emit('reload');
+          }
+        })
+        .catch(() => {
+          setFormProps({ confirmLoading: false });
+        });
+    } catch (_) {}
+  }
+  function handlePrev() {
+    state.currIndex--;
+    handleGetNewInfo();
+  }
+  function handleNext() {
+    state.currIndex++;
+    handleGetNewInfo();
+  }
+  function handleGetNewInfo() {
+    changeLoading(true);
+    getForm().resetFields();
+    const id = state.allList[state.currIndex].id;
+    getData(id);
+  }
+  function setFormProps(data) {
+    setModalProps(data);
+  }
+  function changeLoading(loading) {
+    setModalProps({ loading });
+  }
+  async function onClose() {
+    if (state.isContinue) emit('reload');
+    return true;
+  }
+  function openSelectDialog(key, value) {
+    state.currTableConf = state.addTableConf[key + 'List' + value];
+    state.currVmodel = key;
+    nextTick(() => {
+      (selectModal.value as any)?.openSelectModal();
+    });
+  }
+  function addForSelect(data) {
+    for (let i = 0; i < data.length; i++) {
+      let item = { ...state.tableRows[state.currVmodel], ...data[i], jnpfId: buildUUID() };
+      state.dataForm[state.currVmodel].push(cloneDeep(item));
+      if (state[state.currVmodel + 'DefaultExpandAll']) state[state.currVmodel + 'innerActiveKey'].push(item.jnpfId);
+    }
+  }
+  function getParamList(templateJson, formData, index?) {
+    for (let i = 0; i < templateJson.length; i++) {
+      if (templateJson[i].relationField && templateJson[i].sourceType == 1) {
+        //区分是否子表
+        if (templateJson[i].relationField.includes('-')) {
+          let tableVModel = templateJson[i].relationField.split('-')[0];
+          let childVModel = templateJson[i].relationField.split('-')[1];
+          templateJson[i].defaultValue = (formData[tableVModel] && formData[tableVModel][index] && formData[tableVModel][index][childVModel]) || '';
+        } else {
+          templateJson[i].defaultValue = formData[templateJson[i].relationField] || '';
+        }
+      }
+    }
+    return templateJson;
+  }
+</script>

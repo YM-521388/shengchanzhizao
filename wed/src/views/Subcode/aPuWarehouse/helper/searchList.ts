@@ -1,0 +1,377 @@
+﻿const searchList = [
+  {
+    "label": "名称",
+    "labelI18nCode": "",
+    "prop": "F_Name",
+    "jnpfKey": "input",
+    "searchType": 2,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_Name",
+    "fullName": "仓库名",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "仓库名",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_warehouse",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItem460f44",
+      "renderKey": 1768441604680,
+      "unique": true
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_Name"
+  },
+  {
+    "label": "编码",
+    "labelI18nCode": "",
+    "prop": "F_Address",
+    "jnpfKey": "input",
+    "searchType": 2,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_Address",
+    "fullName": "详细地址",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "详细地址",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_warehouse",
+      "noShow": false,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItem9c1f81",
+      "renderKey": 1768441638145
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_Address"
+  },
+  {
+    "label": "仓库位置",
+    "labelI18nCode": "",
+    "prop": "F_Location",
+    "jnpfKey": "areaSelect",
+    "value": [],
+    "searchType": 1,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_Location",
+    "fullName": "仓库位置",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "areaSelect",
+      "label": "仓库位置",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfAreaSelect",
+      "tagIcon": "icon-ym icon-ym-generator-Provinces",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": [],
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_warehouse",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "formId": "formItem2e791b",
+      "renderKey": 1768441634784
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "disabled": false,
+    "clearable": true,
+    "filterable": false,
+    "multiple": false,
+    "level": 2,
+    "__vModel__": "F_Location"
+  },
+  {
+    "label": "二维码",
+    "labelI18nCode": "",
+    "prop": "F_QRCode",
+    "jnpfKey": "input",
+    "searchType": 2,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_QRCode",
+    "fullName": "二维码",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "input",
+      "label": "二维码",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfInput",
+      "tagIcon": "icon-ym icon-ym-generator-input",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_warehouse",
+      "noShow": true,
+      "regList": [],
+      "trigger": "blur",
+      "formId": "formItemd1e0b2",
+      "renderKey": 1768441674965
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}",
+      "blur": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请输入",
+    "useScan": false,
+    "useMask": false,
+    "maskConfig": {
+      "filler": "*",
+      "maskType": 1,
+      "prefixType": 1,
+      "prefixLimit": 0,
+      "prefixSpecifyChar": "",
+      "suffixType": 1,
+      "suffixLimit": 0,
+      "suffixSpecifyChar": "",
+      "ignoreChar": "",
+      "useUnrealMask": false,
+      "unrealMaskLength": 1
+    },
+    "clearable": true,
+    "addonBefore": "",
+    "addonAfter": "",
+    "prefixIcon": "",
+    "suffixIcon": "",
+    "maxlength": null,
+    "showCount": false,
+    "showPassword": false,
+    "readonly": false,
+    "disabled": false,
+    "__vModel__": "F_QRCode"
+  },
+  {
+    "label": "管理员",
+    "labelI18nCode": "",
+    "prop": "F_UsersId",
+    "jnpfKey": "userSelect",
+    "searchType": 1,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_UsersId",
+    "fullName": "管理员",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "userSelect",
+      "label": "管理员",
+      "tipLabel": "",
+      "showLabel": true,
+      "tag": "JnpfUserSelect",
+      "tagIcon": "icon-ym icon-ym-generator-user",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": [],
+      "defaultCurrent": false,
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_warehouse",
+      "noShow": false,
+      "regList": [],
+      "trigger": "change",
+      "formId": "formItemf05d1e",
+      "renderKey": 1768441614675
+    },
+    "on": {
+      "change": "({ data, rowIndex, formData, setFormData, setShowOrHide, setRequired, setDisabled, onlineUtils }) => {\n    // 在此编写代码\n    \n}"
+    },
+    "style": {
+      "width": "100%"
+    },
+    "placeholder": "请选择",
+    "selectType": "all",
+    "ableIds": [],
+    "ableRelationIds": [],
+    "relationField": "",
+    "multiple": true,
+    "clearable": true,
+    "disabled": false,
+    "__vModel__": "F_UsersId"
+  },
+  {
+    "label": "创建时间",
+    "labelI18nCode": "",
+    "prop": "F_CreatorTime",
+    "jnpfKey": "createTime",
+    "searchType": 3,
+    "searchMultiple": false,
+    "isKeyword": false,
+    "id": "F_CreatorTime",
+    "fullName": "创建时间",
+    "fullNameI18nCode": [
+      ""
+    ],
+    "__config__": {
+      "jnpfKey": "createTime",
+      "label": "创建时间",
+      "showLabel": true,
+      "tag": "JnpfOpenData",
+      "tagIcon": "icon-ym icon-ym-generator-createtime",
+      "tableAlign": "left",
+      "tableFixed": "none",
+      "className": [],
+      "defaultValue": "",
+      "layout": "colFormItem",
+      "required": false,
+      "span": 24,
+      "dragDisabled": false,
+      "visibility": [
+        "pc",
+        "app"
+      ],
+      "tableName": "a_pu_warehouse",
+      "noShow": true,
+      "formId": "formItem26ae84",
+      "renderKey": 1768441641738
+    },
+    "style": {
+      "width": "100%"
+    },
+    "type": "currTime",
+    "readonly": true,
+    "placeholder": "",
+    "__vModel__": "F_CreatorTime"
+  }
+]
+export default searchList

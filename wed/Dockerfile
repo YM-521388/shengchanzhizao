@@ -1,0 +1,39 @@
+# 基础镜像
+# nodejs请勿使用alpine版本，以免出现依赖安装失败的问题
+FROM node:20-alpine as build-stage
+LABEL maintainer=jnpf-team
+
+# 设置时区
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# 指定临时工作目录
+WORKDIR /temp
+
+# 安装pnpm
+RUN npm install -g pnpm@9.9.0 --registry=https://registry.npmmirror.com
+
+# 复制项目
+COPY . .
+
+# 安装依赖
+RUN pnpm install --registry https://registry.npmmirror.com
+
+# 构建项目
+RUN pnpm build
+
+# 基础镜像
+FROM nginx:stable-alpine as production-stage
+
+# 指定运行时的工作目录
+ENV WORKDIR /data/jnpfsoft/jnpf-web-vue3
+WORKDIR $WORKDIR
+
+# 将构建文件拷贝到运行时目录中
+COPY --from=build-stage /temp/dist ${WORKDIR}
+
+# 复制Nginx配置
+COPY deploy/default.conf /etc/nginx/conf.d/
+
+# 指定容器内运行端口
+EXPOSE 80
